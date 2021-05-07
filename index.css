@@ -1,6 +1,5 @@
 .recipe-grid-container {
-    display: grid;
-    grid-template-columns: 40% 60%;
+
 }
 
 p {

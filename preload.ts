@@ -25,12 +25,15 @@ window.addEventListener('DOMContentLoaded', () => {
       {Name:"Spaghetti", Amount:200, Unit:"kg"},
       {Name:"Kødboller", Amount:2, Unit:""},
     ]};
+
+    displayRecipe(recipeList, testRecipe);
 });
 
-var addRecipe = (list : HTMLElement, recipe : Recipe) => {
-  let ele = document.createElement("p");
-
+var displayRecipe = (list : HTMLElement, recipe : Recipe) => {
+  const recipeTemplate = (document.querySelector("template#recipe-template") as HTMLTemplateElement);
+  let recipeNode = recipeTemplate.content.cloneNode(true);
+  
   
 
-  list.appendChild(ele);
+  list.appendChild(recipeNode);
 }
