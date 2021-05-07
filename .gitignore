@@ -1,5 +1,5 @@
 #ignore generated js files
-*.js
+preload.js
 
 #ignore installed node modules
 *node_modules
