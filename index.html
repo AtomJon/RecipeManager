@@ -12,15 +12,23 @@
     <p id="NameDisplay"></p>
     <p id="AmountDisplay"></p>
 
-    <tbody class="recipe-container">
-        <tr>
-            <td><p>Opskrifter</p></td>
-            <td><p>Ingredienser</p></td>
-        </tr>
-    </tbody>
+    <table class="recipe-containe">
+        <thead>
+            <tr>
+                <td><p>Opskrifter</p></td>
+                <td><p>Ingredienser</p></td>
+            </tr>
+        </thead>
+        <tbody id="recipe-list">
+
+        </tbody>
+    </table>
 
     <template id="recipe-template">
-        
+        <tr>
+            <td><p>{{Name}}</p></td>
+            <td><p>{{Ingredients}}</p></td>
+        </tr>
     </template>
 </body>
 </html

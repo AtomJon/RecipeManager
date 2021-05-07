@@ -29,11 +29,14 @@ window.addEventListener('DOMContentLoaded', () => {
     displayRecipe(recipeList, testRecipe);
 });
 
-var displayRecipe = (list : HTMLElement, recipe : Recipe) => {
-  const recipeTemplate = (document.querySelector("template#recipe-template") as HTMLTemplateElement);
+const displayRecipe = (list : HTMLElement, recipe : Recipe) => {
+  const recipeTemplate = (document.getElementById("recipe-template") as HTMLTemplateElement);
   let recipeNode = recipeTemplate.content.cloneNode(true);
   
-  
+  recipeNode.textContent.replace("{{Name}}", recipe.Name);
+
+  console.log(recipeTemplate);
 
   list.appendChild(recipeNode);
 }
+
