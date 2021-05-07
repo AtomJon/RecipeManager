@@ -1,5 +1,3 @@
-const Units = ["", ""];
-
 interface ingredient {
   Name : string
   Amount : number
@@ -31,12 +29,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
 const displayRecipe = (list : HTMLElement, recipe : Recipe) => {
   const recipeTemplate = (document.getElementById("recipe-template") as HTMLTemplateElement);
-  let recipeNode = recipeTemplate.content.cloneNode(true);
-  
-  recipeNode.textContent.replace("{{Name}}", recipe.Name);
+  let recipeNode = recipeTemplate.content.cloneNode(true) as HTMLElement;
 
-  console.log(recipeTemplate);
+  console.log(recipeNode.innerText);
+
+  recipeNode.innerText = recipeNode.innerText.replace("{{Name}}", recipe.Name);
 
   list.appendChild(recipeNode);
 }
-
