@@ -27,6 +27,10 @@ window.addEventListener('DOMContentLoaded', () => {
     ]};
 });
 
-var addRecipe : (list : HTMLElement, recipe : Recipe) => {
-  let ele = "<p></p>";
+var addRecipe = (list : HTMLElement, recipe : Recipe) => {
+  let ele = document.createElement("p");
+
+  
+
+  list.appendChild(ele);
 }

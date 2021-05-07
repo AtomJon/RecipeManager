@@ -1,8 +1,6 @@
 .recipe-grid-container {
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows: 80px 200px;
-    grid-gap: 5px;
 }
 
 p {
