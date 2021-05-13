@@ -5,15 +5,28 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    fullscreen: true,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
     }
   })
+
+  win.webContents.openDevTools();
+
+  /*win.webContents.session.webRequest.onHeadersReceived((details, callback) => {
+    callback({
+      responseHeaders: {
+        ...details.responseHeaders,
+        'Content-Security-Policy': ['default-src \'none\'']
+      }
+    })
+  });*/
 
   win.loadFile('index.html')
 }
 
 app.whenReady().then(() => {
+
   createWindow()
 
   app.on('activate', () => {

@@ -27,13 +27,16 @@ window.addEventListener('DOMContentLoaded', () => {
     displayRecipe(recipeList, testRecipe);
 });
 
+const nodeTemplate = "<tr><td><p>{{Name}}</p></td><td><p>{{Ingredients}}</p></td></tr>";
+
 const displayRecipe = (list : HTMLElement, recipe : Recipe) => {
-  const recipeTemplate = (document.getElementById("recipe-template") as HTMLTemplateElement);
-  let recipeNode = recipeTemplate.content.cloneNode(true) as HTMLElement;
+  const recipeTemplate = (document.getElementById("recipe-template") );
+  let recipeNode = recipeTemplate.cloneNode(true);
 
-  console.log(recipeNode.innerText);
+  console.log(recipeNode);
+  console.log(recipeNode.nodeValue);
 
-  recipeNode.innerText = recipeNode.innerText.replace("{{Name}}", recipe.Name);
+  recipeNode.textContent = recipeNode.textContent.replace("{{Name}}", recipe.Name);
 
   list.appendChild(recipeNode);
 }
